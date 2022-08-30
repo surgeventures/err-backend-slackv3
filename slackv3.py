@@ -1076,8 +1076,7 @@ class SlackBackend(ErrBot):
 
     def prefix_groupchat_reply(self, message, identifier):
         super().prefix_groupchat_reply(message, identifier)
-        message.body = f"@{identifier.nick}: {message.body}"
-
+        message.body = f"<@{identifier.person}>: {message.body}"
     @staticmethod
     def sanitize_uris(text):
         """
